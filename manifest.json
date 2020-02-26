@@ -1,0 +1,47 @@
+{
+  "background": {
+    "scripts": [ "TLDs.js", "background.js" ]
+  },
+  "browser_action": {
+    "default_title": "Adblock Extreme",
+    "default_popup": "pop-up.html"
+  },
+  "content_scripts" : [ {
+      "all_frames": true,
+      "js" : [ "document_start.js" ],
+      "match_about_blank": true,
+      "matches" : [ "<all_urls>" ],
+      "run_at": "document_start"
+  } ],
+  "content_security_policy": "object-src 'self'; script-src 'self' 'unsafe-eval'",
+  "default_locale": "en_US",
+  "description": "Block ads and other unwanted content.",
+  "icons": {
+    "16": "Icon16.png",
+    "24": "Icon24.png",
+    "32": "Icon32.png",
+    "48": "Icon48.png",
+    "128": "Icon128.png"
+  },
+  "incognito": "split",
+  "manifest_version": 2,
+  "minimum_chrome_version": "69",
+  "name": "Adblock Extreme",
+  "options_ui": {
+    "page": "options.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "alarms",
+    "contextMenus",
+    "cookies",
+    "declarativeContent",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "version": "2020.2.9"
+}

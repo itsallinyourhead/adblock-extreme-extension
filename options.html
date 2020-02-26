@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>Adblock Extreme</title>
+  <link href=Icon32.png rel="shortcut icon" type=image/x-icon>
+  <link href=options.css rel=stylesheet>
+  <link href=toggleButton.css rel=stylesheet>
+</head>
+<body>
+  <div id=content>
+    <div class=display id=GeneralId>
+      <div class=nav id=navGeneralId>
+        <div class=GeneralId><span>GENERAL</span></div>
+        <span class="nav0 ListsId"><span tabindex=1>LISTS</span></span>
+        <span class="nav0 SiteId"><span tabindex=2>SITE SPECIFIC</span></span>
+        <span class="nav0 StatisticsId"><span tabindex=3>STATISTICS</span></span>
+        <span class="nav0 AboutId"><span tabindex=4>ABOUT</span></span>
+      </div>
+      <div class=content>
+        <h3 class=noMarginTop>Counter</h3>
+        <label class=switch>
+          <input class=switchI id=GeneralBadge type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">Show counter</span>
+        </label>
+        <div class=div></div>
+        <h3>Page load</h3>
+        <label class=switch>
+          <input class=switchI id=GeneralSmooth type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">
+            Smoother page load
+            <img alt="" class=informationIcon src=InformationIcon.png title="It's less likely to see empty ad areas during page load before they are hidden.&#010;This comes at the expense of higher memory usage of each tab and frame.&#010;&#010;Default: off">
+          </span>
+        </label>
+        <br>
+        <div class=div></div>
+        <h3>Advanced</h3>
+        <label class=switch>
+          <input class=switchI id=GeneralLogBlock type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">Show blocked requests in background page console</span>
+        </label>
+        <label class=switch>
+          <input class=switchI id=GeneralLogHTTPS type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">Show redirected requests to HTTPS in background page console</span>
+        </label>
+      </div>
+    </div>
+    <div class=display id=ListsId>
+      <div class=nav id=navListsId>
+        <span class="nav0 GeneralId"><span tabindex=5>GENERAL</span></span>
+        <div class=ListsId><span>LISTS</span></div>
+        <span class="nav0 SiteId"><span tabindex=6>SITE SPECIFIC</span></span>
+        <span class="nav0 StatisticsId"><span tabindex=7>STATISTICS</span></span>
+        <span class="nav0 AboutId"><span tabindex=8>ABOUT</span></span>
+      </div>
+      <div class=content id=listsContent>
+        <div id=listsAddLists>
+          <select id=addSelect>
+            <option value=0>Choose list to add</option>
+            <optgroup label="Block ads">
+              <option value="AdsEasyList main (english)">EasyList main (english)</option>
+              <option value="AdsSupplemental">Supplemental</option>
+              <option value="AdsEasyList arabic">EasyList arabic</option>
+              <option value="AdsEasyList bulgarian">EasyList bulgarian</option>
+              <option value="AdsEasyList chinese">EasyList chinese</option>
+              <option value="AdsEasyList czech and slovak">EasyList czech and slovak</option>
+              <option value="AdsEasyList dutch">EasyList dutch</option>
+              <option value="AdsEasyList french">EasyList french</option>
+              <option value="AdsEasyList german">EasyList german</option>
+              <option value="AdsEasyList hebrew">EasyList hebrew</option>
+              <option value="AdsEasyList indonesian">EasyList indonesian</option>
+              <option value="AdsEasyList italian">EasyList italian</option>
+              <option value="AdsEasyList japanese">EasyList japanese</option>
+              <option value="AdsEasyList japanese mobile">EasyList japanese mobile</option>
+              <option value="AdsEasyList latvian">EasyList latvian</option>
+            </optgroup>
+            <optgroup label="Block social widgets">
+              <option value="SocialEasyList social">EasyList social</option>
+            </optgroup>
+            <optgroup label="Bloch other types">
+              <option value="OtherAdblock warning removal">Adblock warning removal</option>
+              <option value="OtherEasyList privacy">EasyList privacy</option>
+              <option value="OtherFanboy cookie warnings">Fanboy cookie warnings</option>
+              <option value="OtherStop Cryptomining">Stop Cryptomining</option>
+            </optgroup>
+            <optgroup label="Redirect to HTTPS">
+              <option value="HTTPSExtreme HTTPS">Extreme HTTPS</option>
+            </optgroup>
+            <optgroup label="Add list per URL">
+              <option value=1>Add list per URL</option>
+            </optgroup>
+          </select>
+          <div id=listsAddWarningOuter><span class=warning id=listsAddWarning></span><button class=trash id=listsAddWarningRemove></button></div>
+          <input id=updateLists type=button value="Update lists now">
+          <div id=addOwn>
+            <br>
+            <input id=listsAddURL placeholder="URL" type=text><br>
+            <br>
+            <input id=listsAddName placeholder="Name (optional)" type=text><span id=listsAddSpan>Category: </span><select id=listsAddCategory><option value=0>Block ads</option><option value=1>Block social wdgets</option><option value=2>Block other types</option><option value=3>Redirect to HTTPS</option></select><input id=listsAddSubmit type=button value="Add list">
+          </div>
+        </div>
+        <div class=div></div>
+        <h3>Block ads</h3>
+        <div id=listsAds></div>
+        <div class=div></div>
+        <h3>Block social widgets</h3>
+        <div id=listsSocial></div>
+        <div class=div></div>
+        <h3>Block other types</h3>
+        <div id=listsOther></div>
+        <div class=div></div>
+        <h3>Redirect to HTTPS</h3>
+        <div id=listsHTTPS></div>
+        <div class=div></div>
+        <h3>Whitelist</h3>
+        <div id=listsWhite></div>
+        <input id=listsWhiteAdd placeholder="Add site to whitelist" type=text><input id=listsWhiteSubmit type=button value=Add><br>
+        <span class=warning id=listsWhiteError></span><button class=link-button id=listsWhiteShow>Show help...</button>
+        <div id=listsWhiteHelp></div>
+        <div class=div></div>
+        <h3>Own filter</h3>
+        <table class=left id=listsOwnTable>
+          <tr>
+            <td id=listsOwnActive></td><td><a href="https://wiki.adblockextreme.org/BasicFilterRules" id=listsOwnLink>Tutorial</a><span id=listsownSpan> to create filter</span></td>
+          </tr>
+        </table>
+        <input id=listsOwnShow type=button value="Show own filter">
+        <input class=display id=listsOwnApply type=button value=Apply>
+        <textarea class=display id=listsOwnTextarea placeholder="Add own filter"></textarea>
+      </div>
+    </div>
+    <div class=display id=SiteId>
+      <div class=nav id=navSiteId>
+        <span class="nav0 GeneralId"><span tabindex=9>GENERAL</span></span>
+        <span class="nav0 ListsId"><span tabindex=10>LISTS</span></span>
+        <div class=SiteId><span>SITE SPECIFIC</span></div>
+        <span class="nav0 StatisticsId"><span tabindex=11>STATISTICS</span></span>
+        <span class="nav0 AboutId"><span tabindex=12>ABOUT</span></span>
+      </div>
+      <div class=content>
+        <h3 class=noMarginTop>Facebook</h3>
+        <label class=switch>
+          <input class=switchI id=SiteSpecificFacebookTimelineId type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">
+            Hide sponsored posts in timeline
+            <img alt="" class=informationIcon src=InformationIcon.png title="Use a different approach to hide sponsored posts.&#010;This filter should be more reliable than the filter in EasyList.&#010;&#010;Default: on">
+          </span>
+        </label>
+        <label class=switch>
+          <input class=switchI id=SiteSpecificFacebookAdsRight type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">
+            Hide ads in the right column
+            <img alt="" class=informationIcon src=InformationIcon.png title="&#010;&#010;Default: on">
+          </span>
+        </label>
+        <label class=switch>
+          <input class=switchI id=SiteSpecificFacebookAppsRight type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">Hide right column completely on app sites</span>
+        </label>
+        <div class=div></div>
+        <h3>YouTube</h3>
+        <label class=switch>
+          <input class=switchI id=SiteSpecificYouTubeAnnotations type=checkbox>
+          <span class=switchL data-on=ON data-off=OFF></span>
+          <span class=switchH></span>
+          <span class="select toogle-button-text">Hide annotations</span>
+        </label>
+      </div>
+    </div>
+    <div class=display id=StatisticsId>
+      <div class=nav id=navStatisticsId>
+        <span class="nav0 GeneralId"><span tabindex=13>GENERAL</span></span>
+        <span class="nav0 ListsId"><span tabindex=14>LISTS</span></span>
+        <span class="nav0 SiteId"><span tabindex=15>SITE SPECIFIC</span></span>
+        <div class=StatisticsId><span>STATISTICS</span></div>
+        <span class="nav0 AboutId"><span tabindex=16>ABOUT</span></span>
+      </div>
+      <div class=content>
+        <span class=select id=statsNone>no requests yet</span>
+        <canvas height=250 id=statsCanvas width=250></canvas>
+        <div id=statsInner>
+          <div id=statsChoose>
+            <label><input id=statsShowOnly name=Stats type=radio><span class=select> Only this session</span></label><label><input id=statsShowAll name=Stats type=radio><span class=select> All sessions</span></label>
+          </div>
+          <table>
+            <tr>
+              <td class="a g">Requests</td>
+              <td class="a b i">%</td>
+               <td class="a b c">#</td>
+            </tr>
+            <tr>
+              <td class=statsUnchangedHTTPS>Unchanged HTTPS:</td>
+              <td class=b id=statsUnchangedHTTPSPercent></td>
+              <td class="b c" id=statsUnchangedHTTPS></td>
+            </tr>
+            <tr>
+              <td class=statsUnchangedHTTP>Unchanged HTTP:</td>
+              <td class=b id=statsUnchangedHTTPPercent></td>
+              <td class="b c" id=statsUnchangedHTTP></td>
+            </tr>
+            <tr>
+              <td class=statsToHTTPS>Redirected to HTTPS:</td>
+              <td class=b id=statsToHTTPSPercent></td>
+              <td class="b c" id=statsToHTTPS></td>
+            </tr>
+            <tr>
+              <td class=statsBlockedHTTPS>Blocked HTTPS:</td>
+              <td class=b id=statsBlockedHTTPSPercent></td>
+              <td class="b c" id=statsBlockedHTTPS></td>
+            </tr>
+            <tr>
+              <td class=statsBlockedHTTP>Blocked HTTP:</td>
+              <td class=b id=statsBlockedHTTPPercent></td>
+              <td class="b c" id=statsBlockedHTTP></td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr>
+              <td>Total blocked:</td>
+              <td class=b id=statsTotalBlockedPercent></td>
+              <td class="b c" id=statsTotalBlocked></td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr>
+              <td>Total HTTPS:</td>
+              <td class=b id=statsTotalHTTPSPercent></td>
+              <td class="b c" id=statsTotalHTTPS></td>
+            </tr>
+            <tr>
+              <td>Total HTTP:</td>
+              <td class=b id=statsTotalHTTPPercent></td>
+              <td class="b c" id=statsTotalHTTP></td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr>
+              <td>Total:</td>
+              <td class=b id=statsTotalPercent></td>
+              <td class="b c" id=statsTotal></td>
+            </tr>
+          </table>
+          <input id=statsReset type=button value="Reset statistics of this session"><br>
+          <input id=statsReset0 type=button value="Reset statistics of all sessions">
+        </div>
+      </div>
+    </div>
+    <div class=display id=AboutId>
+      <div class=nav id=navAboutId>
+        <span class="nav0 GeneralId"><span tabindex=17>GENERAL</span></span>
+        <span class="nav0 ListsId"><span tabindex=18>LISTS</span></span>
+        <span class="nav0 SiteId"><span tabindex=19>SITE SPECIFIC</span></span>
+        <span class="nav0 StatisticsId"><span tabindex=20>STATISTICS</span></span>
+        <div class=AboutId><span>ABOUT</span></div>
+      </div>
+      <div class=content>
+        <a href=https://adblockextreme.org>Website</a><br>
+        <br>
+        <span>Author: Michael Müller</span>
+        <br><br>
+        <span id=Version></span>
+      </div>
+    </div>
+  </div>
+  <div id=loadingBar></div>
+  <script src=options.js></script>
+</body>
+</html>

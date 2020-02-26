@@ -1,0 +1,95 @@
+* {
+    font-size: 12px;
+}
+body {
+    width: 235px;
+}
+label {
+    height: 25px;
+}
+.a {
+    font-weight: bold;
+}
+.b {
+    float: right;
+}
+.c {
+    width: 30px;
+}
+.d {
+    float: right;
+}
+.div {
+    background: lightgray;
+    height: 1px;
+    clear: both;
+    margin-top: 17px;
+    width: 100%;
+}
+.e {
+    display: inline-block;
+}
+.f {
+    width: 183px;
+}
+.g {
+    white-space: nowrap;
+}
+.j {
+    font-size: 15px;
+}
+.k {
+    margin-top: -7px;
+}
+.hidden {
+    height: 0;
+}
+.link-button {
+    background:transparent none;
+    border: none;
+    box-shadow: none;
+    color: rgb(17, 85, 204);
+    cursor: pointer;
+    padding:0;
+}
+.select {
+    user-select: none;
+}
+#BlockedSite, #BlockedTotal, #None {
+    display: block;
+    width:100%;
+}
+#BlockedSite, #BlockedTotal {
+    height: 20px;
+}
+#BlockedSiteNumber, #BlockedSiteText, #BlockedTotalNumber, #BlockedTotalText {
+    display: inline;
+}
+#BlockedSiteNumber, #BlockedTotalNumber {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    overflow: hidden;
+    text-align:right;
+    width: 80px;
+}
+#BlockedSiteText, #BlockedTotalText {
+    margin: 3px 0 0 5px;
+    position: absolute;
+    white-space: nowrap;
+}
+#Block {
+    overflow: hidden;
+    width:100%;
+}
+#BlockInner {
+    max-height: 300px;
+    overflow:auto;
+}
+#OptionsButton {
+    padding-top: 5px;
+    text-decoration: underline;
+}
+#WhitelistOuter {
+    display:none;
+}

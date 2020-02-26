@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>Adblock Extreme</title>
+  <link href=Icon32.png rel="shortcut icon" type=image/x-icon>
+  <link href=pop-up.css rel=stylesheet>
+  <link href=toggleButton.css rel=stylesheet>
+</head>
+<body>
+  <span class="a j">Adblock Extreme</span><button class="d link-button" id=OptionsButton>Options</button><br>
+  <br>
+  <div id=WhitelistOuter>
+    <br>
+    <label class=switch>
+      <input class=switchI id=WhitelistId type=checkbox>
+      <span class=switchL data-on=ON data-off=OFF></span>
+      <span class=switchH></span>
+      <span class="select toogle-button-text">Block ads on this site</span>
+    </label>
+    <br>
+  </div>
+  <div class=div></div>
+  <br>
+  <div id=BlockedSite>
+    <div id=BlockedSiteNumber></div>
+    <div id=BlockedSiteText>blocked requests on this site</div>
+  </div>
+  <div class=div></div>
+  <br>
+  <div id=BlockedTotal>
+    <div id=BlockedTotalNumber></div>
+    <div id=BlockedTotalText>blocked requests in total</div>
+  </div>
+  <div class=div></div>
+  <br><br>
+  <button class="b link-button" id=Show>Show blocked requests on this site</button><br>
+  <div class=hidden id=Block>
+    <br>
+    <div id=BlockInner></div>
+  </div>
+  <script src=pop-up.js></script>
+</body>
+</html>
